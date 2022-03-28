@@ -16,7 +16,7 @@ hints:
     dockerPull: quay.io/biocontainers/biobb_analysis:4.2.0--pyhdfd78af_0
 
 inputs:
-  input_structure_path:
+  input_crd_path:
     label: Path to the input structure file
     doc: |-
       Path to the input structure file

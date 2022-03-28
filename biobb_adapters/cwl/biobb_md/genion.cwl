@@ -30,7 +30,7 @@ inputs:
       position: 1
       prefix: --input_tpr_path
 
-  output_gro_path:
+  output_crd_path:
     label: Path to the input structure GRO file
     doc: |-
       Path to the input structure GRO file
@@ -100,13 +100,13 @@ inputs:
       prefix: --config
 
 outputs:
-  output_gro_path:
+  output_crd_path:
     label: Path to the input structure GRO file
     doc: |-
       Path to the input structure GRO file
     type: File
     outputBinding:
-      glob: $(inputs.output_gro_path)
+      glob: $(inputs.output_crd_path)
     format: edam:format_2033
 
   output_top_zip_path:

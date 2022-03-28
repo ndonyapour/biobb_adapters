@@ -15,7 +15,7 @@ hints:
     dockerPull: quay.io/biocontainers/biobb_md:3.7.2--pyhdfd78af_0
 
 inputs:
-  input_gro_path:
+  input_crd_path:
     label: Path to the input GROMACS structure GRO file
     doc: |-
       Path to the input GROMACS structure GRO file
