@@ -26,6 +26,7 @@ inputs:
     type: File
     format:
     - edam:format_2033
+    - edam:format_1476
     inputBinding:
       position: 1
       prefix: --input_gro_path

@@ -15,7 +15,7 @@ hints:
     dockerPull: quay.io/biocontainers/biobb_md:3.7.2--pyhdfd78af_0
 
 inputs:
-  input_solute_gro_path:
+  input_solute_crd_path:
     label: Path to the input GRO file
     doc: |-
       Path to the input GRO file
@@ -46,7 +46,8 @@ inputs:
     inputBinding:
       position: 2
       prefix: --output_gro_path
-    default: system.gro
+#    default: system.gro
+    default: system.g96
 
   input_top_zip_path:
     label: Path the input TOP topology in zip format
@@ -79,7 +80,7 @@ inputs:
       prefix: --output_top_zip_path
     default: system.zip
 
-  input_solvent_gro_path:
+  input_solvent_crd_path:
     label: (spc216.gro) Path to the GRO file containing the structure of the solvent
     doc: |-
       (spc216.gro) Path to the GRO file containing the structure of the solvent

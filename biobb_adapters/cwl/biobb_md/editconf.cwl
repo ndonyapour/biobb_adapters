@@ -15,7 +15,7 @@ hints:
     dockerPull: quay.io/biocontainers/biobb_md:3.7.2--pyhdfd78af_0
 
 inputs:
-  input_gro_path:
+  input_crd_path:
     label: Path to the input GRO file
     doc: |-
       Path to the input GRO file
@@ -31,7 +31,7 @@ inputs:
       position: 1
       prefix: --input_gro_path
 
-  output_gro_path:
+  output_crd_path:
     label: Path to the output GRO file
     doc: |-
       Path to the output GRO file
@@ -41,13 +41,14 @@ inputs:
       Example file: https://github.com/bioexcel/biobb_md/raw/master/biobb_md/test/reference/gromacs/ref_editconf.gro
     type: string
     format:
-    - edam:format_1476
     - edam:format_2033
+    - edam:format_1476
     inputBinding:
       position: 2
       prefix: --output_gro_path
-    default: system.pdb
-
+#    default: system.pdb
+#    default: system.gro
+    default: system.g96
   config:
     label: Advanced configuration options for biobb_md Editconf
     doc: |-
@@ -57,14 +58,15 @@ inputs:
       prefix: --config
 
 outputs:
-  output_gro_path:
+  output_crd_path:
     label: Path to the output GRO file
     doc: |-
       Path to the output GRO file
     type: File
     outputBinding:
-      glob: $(inputs.output_gro_path)
-    format: edam:format_1476
+      glob: $(inputs.output_crd_path)
+#    format: edam:format_1476
+    format: edam:format_2033
 
 $namespaces:
   edam: https://edamontology.org/

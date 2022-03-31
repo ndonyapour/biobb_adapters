@@ -16,7 +16,7 @@ hints:
     dockerPull: quay.io/biocontainers/biobb_analysis:4.2.0--pyhdfd78af_0
 
 inputs:
-  input_traj_path:
+  input_crd_path:
     label: Path to the GROMACS trajectory file
     doc: |-
       Path to the GROMACS trajectory file
@@ -57,7 +57,7 @@ inputs:
       position: 2
       prefix: --input_top_path
 
-  output_traj_path:
+  output_crd_path:
     label: Path to the output file
     doc: |-
       Path to the output file
@@ -77,7 +77,8 @@ inputs:
     inputBinding:
       position: 3
       prefix: --output_traj_path
-    default: system.xtc
+#    default: system.xtc
+    default: system.g96
 
   input_index_path:
     label: Path to the GROMACS index file
@@ -102,14 +103,15 @@ inputs:
       prefix: --config
 
 outputs:
-  output_traj_path:
+  output_crd_path:
     label: Path to the output file
     doc: |-
       Path to the output file
     type: File
     outputBinding:
-      glob: $(inputs.output_traj_path)
-    format: edam:format_3875
+      glob: $(inputs.output_crd_path)
+#    format: edam:format_3875
+    format: edam:format_2033
 
 $namespaces:
   edam: https://edamontology.org/

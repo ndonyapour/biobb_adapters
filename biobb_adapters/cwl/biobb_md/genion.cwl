@@ -44,7 +44,8 @@ inputs:
     inputBinding:
       position: 2
       prefix: --output_gro_path
-    default: system.gro
+#    default system.gro
+    default: system.g96
 
   input_top_zip_path:
     label: Path the input TOP topology in zip format
