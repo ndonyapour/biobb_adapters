@@ -15,7 +15,7 @@ hints:
     dockerPull: quay.io/biocontainers/biobb_gromacs:4.2.0--pyhdfd78af_0
 
 inputs:
-  input_solute_gro_path:
+  input_solute_crd_path:
     label: Path to the input GRO file
     doc: |-
       Path to the input GRO file
@@ -31,7 +31,7 @@ inputs:
       position: 1
       prefix: --input_solute_gro_path
 
-  output_gro_path:
+  output_crd_path:
     label: Path to the output GRO file
     doc: |-
       Path to the output GRO file
@@ -46,7 +46,8 @@ inputs:
     inputBinding:
       position: 2
       prefix: --output_gro_path
-    default: system.gro
+#    default: system.gro
+    default: system.g96
 
   input_top_zip_path:
     label: Path the input TOP topology in zip format
@@ -79,7 +80,7 @@ inputs:
       prefix: --output_top_zip_path
     default: system.zip
 
-  input_solvent_gro_path:
+  input_solvent_crd_path:
     label: (spc216.gro) Path to the GRO file containing the structure of the solvent
     doc: |-
       (spc216.gro) Path to the GRO file containing the structure of the solvent
@@ -102,13 +103,13 @@ inputs:
       prefix: --config
 
 outputs:
-  output_gro_path:
+  output_crd_path:
     label: Path to the output GRO file
     doc: |-
       Path to the output GRO file
     type: File
     outputBinding:
-      glob: $(inputs.output_gro_path)
+      glob: $(inputs.output_crd_path)
     format: edam:format_2033
 
   output_top_zip_path:

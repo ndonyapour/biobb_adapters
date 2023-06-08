@@ -15,7 +15,7 @@ hints:
     dockerPull: quay.io/biocontainers/biobb_gromacs:4.2.0--pyhdfd78af_0
 
 inputs:
-  input_gro_path:
+  input_crd_path:
     label: Path to the input GROMACS structure GRO file
     doc: |-
       Path to the input GROMACS structure GRO file
@@ -61,7 +61,7 @@ inputs:
       prefix: --output_trr_path
     default: system.trr
 
-  output_gro_path:
+  output_crd_path:
     label: Path to the output GROMACS structure GRO file
     doc: |-
       Path to the output GROMACS structure GRO file
@@ -75,7 +75,8 @@ inputs:
     inputBinding:
       position: 4
       prefix: --output_gro_path
-    default: system.gro
+#    default: system.gro
+    default: system.g96
 
   output_edr_path:
     label: Path to the output GROMACS portable energy file EDR
@@ -215,13 +216,13 @@ outputs:
       glob: $(inputs.output_trr_path)
     format: edam:format_3910
 
-  output_gro_path:
+  output_crd_path:
     label: Path to the output GROMACS structure GRO file
     doc: |-
       Path to the output GROMACS structure GRO file
     type: File
     outputBinding:
-      glob: $(inputs.output_gro_path)
+      glob: $(inputs.output_crd_path)
     format: edam:format_2033
 
   output_edr_path:

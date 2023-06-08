@@ -30,7 +30,7 @@ inputs:
       position: 1
       prefix: --input_tpr_path
 
-  output_gro_path:
+  output_crd_path:
     label: Path to the input structure GRO file
     doc: |-
       Path to the input structure GRO file
@@ -44,7 +44,8 @@ inputs:
     inputBinding:
       position: 2
       prefix: --output_gro_path
-    default: system.gro
+#    default: system.gro
+    default: system.g96
 
   input_top_zip_path:
     label: Path the input TOP topology in zip format
@@ -100,13 +101,13 @@ inputs:
       prefix: --config
 
 outputs:
-  output_gro_path:
+  output_crd_path:
     label: Path to the input structure GRO file
     doc: |-
       Path to the input structure GRO file
     type: File
     outputBinding:
-      glob: $(inputs.output_gro_path)
+      glob: $(inputs.output_crd_path)
     format: edam:format_2033
 
   output_top_zip_path:
